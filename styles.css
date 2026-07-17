@@ -281,6 +281,10 @@ button {
   background: rgba(20, 15, 34, 0.5);
 }
 
+.search-panel[hidden] {
+  display: none !important;
+}
+
 .search-card {
   width: min(100%, 620px);
   background: #fff;
@@ -301,6 +305,11 @@ button {
   background: #fff;
   font-size: 1.45rem;
   line-height: 1;
+}
+
+.search-close:hover {
+  border-color: rgba(23, 20, 33, 0.22);
+  box-shadow: 0 8px 22px rgba(23, 20, 33, 0.1);
 }
 
 .search-card h2 {
@@ -341,6 +350,11 @@ button {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: #fff;
+}
+
+.search-dismiss {
+  width: 100%;
+  margin-top: 16px;
 }
 
 .section {

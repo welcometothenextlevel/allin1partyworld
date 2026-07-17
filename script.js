@@ -150,7 +150,7 @@ const menuButton = document.querySelector("[data-menu-button]");
 const nav = document.querySelector("#primary-nav");
 const header = document.querySelector("[data-header]");
 const searchOpen = document.querySelector("[data-search-open]");
-const searchClose = document.querySelector("[data-search-close]");
+const searchCloseButtons = document.querySelectorAll("[data-search-close]");
 const searchPanel = document.querySelector("[data-search-panel]");
 const searchInput = document.querySelector("[data-search-input]");
 const searchResults = document.querySelector("[data-search-results]");
@@ -209,7 +209,9 @@ function openSearch() {
 function closeSearch() {
   searchPanel.hidden = true;
   document.body.classList.remove("search-open");
-  searchOpen.focus();
+  if (searchOpen) {
+    searchOpen.focus();
+  }
 }
 
 function renderSearchResults(query) {
@@ -262,8 +264,16 @@ nav.addEventListener("click", (event) => {
 });
 
 searchOpen.addEventListener("click", openSearch);
-searchClose.addEventListener("click", closeSearch);
+searchCloseButtons.forEach((button) => {
+  button.addEventListener("click", closeSearch);
+});
 searchInput.addEventListener("input", (event) => renderSearchResults(event.target.value));
+
+searchResults.addEventListener("click", (event) => {
+  if (event.target.closest("a")) {
+    closeSearch();
+  }
+});
 
 searchPanel.addEventListener("click", (event) => {
   if (event.target === searchPanel) {
