@@ -175,8 +175,7 @@ function renderProducts(filter = "all") {
           ${product.originalPrice ? `<span class="compare-price">${product.originalPrice}</span>` : ""}
         </div>
         <div class="product-actions">
-          <a href="${product.url}" target="_blank" rel="noopener">View Product</a>
-          <button class="demo-cart" type="button" aria-label="Demo add to cart for ${product.name}" data-demo-cart>+</button>
+          <a href="${product.url}" target="_blank" rel="noopener">View on live store</a>
         </div>
       </div>
     </article>
@@ -288,17 +287,6 @@ document.addEventListener("keydown", (event) => {
     }
     toggleMenu(false);
   }
-});
-
-document.addEventListener("click", (event) => {
-  const button = event.target.closest("[data-demo-cart]");
-  if (!button) return;
-  button.classList.add("is-added");
-  button.textContent = "Added";
-  setTimeout(() => {
-    button.classList.remove("is-added");
-    button.textContent = "+";
-  }, 1500);
 });
 
 window.addEventListener("scroll", () => {

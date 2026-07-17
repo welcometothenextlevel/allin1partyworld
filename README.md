@@ -36,7 +36,7 @@ Open `index.html` directly in a browser. No backend, database, PHP, framework, p
 
 Product cards are stored in `script.js` inside the `products` array. Update product names, prices, image paths and live store URLs there.
 
-All product links point to the corresponding live All in 1 Party World product pages. The sample does not include checkout. The small add-to-cart button is a visual demo interaction only.
+All product links point to the corresponding live All in 1 Party World product pages. The sample does not include checkout; product cards intentionally send visitors to the live store.
 
 ## Images
 
@@ -75,7 +75,7 @@ Telephone, email and directions links use:
 ## Demonstration-only functions
 
 - Search is a front-end sample over the featured products and key categories.
-- Add to cart is a visual demo state and does not create a real cart.
+- Product browsing is catalogue-style and redirects to the live All in 1 Party World store for product actions.
 - Product and category shopping continues on the existing live All in 1 Party World store.
 
 ## Canonical URL
